@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
+\usepackage[numbers,sort&compress]{natbib}
+
 
 \title{Tarea 0 : Prueba}
 \author{Julio César García García}
@@ -10,10 +12,12 @@
 
 
 	\section{Intro}\label{intro}
-	 Esta es la tarea 0 de simulacion, mostramos el uso de R y python
+	 Esta es la tarea 0 de simulacion, mostramos el uso de R y python \citet{otra}
 	 
 	 \section{Conclusión}
-	 En la sección \ref{intro} explica coomo ustar todo
+	 En la sección \ref{intro} explica coomo ustar todo \citep{libro} .
+	 Además \citet{art} aqui
 	
-	
+\bibliography{Biblio}
+\bibliographystyle{plainnat}
 \end{document}
