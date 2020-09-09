@@ -1,0 +1,6 @@
+X=5
+Y=8
+print("8x5= ",X*Y)
+datos = [3,5,9,8]
+tamano=len(datos)
+print("El tamaño es: ",tamano)
