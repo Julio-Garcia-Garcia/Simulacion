@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[numbers,sort&compress]{natbib}
+
+
+\title {Autómata celular}
+\author{Julio Garc\'ia}
+
+
+\pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Objetivo}
+
+Basados en la definición de autómata celular presentado en \citet{e1}
+ en dos dimensiones, especialmente el famoso juego de la vida \citet{e2}
+ , se desea diseñar y ejecutar un experimento para determinar el mayor tiempo continua de vida en una celda en una malla de 20 por 20 celdas hasta que se mueran todas o que se hayan cumplidos una cantidad de iteraciones definida (50). En este experimento se varía la probabilidad de 0.1 a 0.9 en pasos de 0.1 (En el ejemplo se distribuyen uniformemente al azar, por lo cual la probabilidad es 0.5) 
+
+
+\section{Metodolog\'ia}
+Una matriz boleana representa el estado de un automata, es decir, una celda se representa como una entrada en una matriz, si su valor es uno, indica que esta viva, de lo contrario si vale cero indica que esta muerta. En \citet{p2}
+ se indica el proceso de supervivencia de una matriz (autómata celular) de una iteración a otra, básicamente se centra en la suma de los vecinos de una celda, deberá ser exactamente tres, si esto ocurre, la celda sobrevivirá, en la siguiente iteración. En base a lo definido anteriormente, se supone lo siguiente:
+-El tiempo de vida de una celda, dependerá si entre la iteración antecesora y la iteración sucesora se mantiene viva dicha celda, es decir, de tener un valor uno, continua con otro valor. Por lo cual, el valor se acumula entre iteraciones, en caso de morir la celda, su tiempo de vida se acaba y vuelve hacer cero.
+-El autómata celular inicial, no es distribuida uniformemente, su probabilidad de cada celda varía entre 0.1 a 0.9. Este supuesto es muy importante, ya que la semilla (autómata celular inicial) es la propagante inicial para que existan más sobrevivientes y la vida de las celdas sea más largas.
+
+
+\newpage
+\section{Resultados}
+El experimento fue codificado en el lenguaje de programación Python, se realizaon 50 iteraciones con una automata inicial con probabilidad entre 0.1 y 0.9. Se modifico el código original al generar la automata inicial, se guardo el valor máximo de vida entre todas las iteraciones, así como la vida entre cada iteración. 
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	Iteracion & Suma de vivos & Máximo de dos iteraciones \\
+	\hline
+	0 & 65 & 0 \\
+	\hline
+	1 & 41 & 1 \\
+	\hline
+	2 & 28 & 1 \\
+	\hline
+	3 & 21 & 1 \\
+	\hline
+	4 & 16 & 2 \\
+	\hline
+	5 & 7 & 1 \\
+	\hline
+	6 & 4 & 1 \\
+	\hline
+	7 & 4 & 1 \\
+	\hline
+	8 & 4 & 1 \\
+	\hline
+	9 & 4 & 1 \\
+	\hline
+	10 & 4 & 1 \\
+	\hline
+	11 & 4 & 1 \\
+	\hline
+	12 & 4 & 1 \\
+	\hline
+	13 & 4 & 1 \\
+	\hline
+	14 & 4 & 1 \\
+	\hline
+	15 & 4 & 1 \\
+	\hline
+	16 & 4 & 1 \\
+	\hline
+	17 & 4 & 1 \\
+	\hline
+	18 & 4 & 1 \\
+	\hline
+	19 & 4 & 1 \\
+	\hline
+	20 & 4 & 1 \\
+	\hline
+	21 & 4 & 1 \\
+	\hline
+	22 & 4 & 1 \\
+	\hline
+	23 & 4 & 1 \\
+	\hline
+	24 & 4 & 1 \\
+	\hline
+	25 & 4 & 1 \\
+	\hline
+	26 & 4 & 1 \\
+	\hline
+	27 & 4 & 1 \\
+	\hline
+	28 & 4 & 1 \\
+	\hline
+	29 & 4 & 1 \\
+	\hline
+	30 & 4 & 1 \\
+	\hline
+	31 & 4 & 1 \\
+	\hline
+	32 & 4 & 1 \\
+	\hline
+	33 & 4 & 1 \\
+	\hline
+	34 & 4 & 1 \\
+	\hline
+	35 & 4 & 1 \\
+	\hline
+	36 & 4 & 1 \\
+	\hline
+	37 & 4 & 1 \\
+	\hline
+	38 & 4 & 1 \\
+	\hline
+	39 & 4 & 1 \\
+	\hline
+	40 & 4 & 1 \\
+	\hline
+	41 & 4 & 1 \\
+	\hline
+	42 & 4 & 1 \\
+	\hline
+	43 & 4 & 1 \\
+	\hline
+	44 & 4 & 1 \\
+	\hline
+	45 & 4 & 1 \\
+	\hline
+	46 & 4 & 1 \\
+	\hline
+	47 & 4 & 1 \\
+	\hline
+	48 & 4 & 1 \\
+	\hline
+	49 & 4 & 1 \\
+	\hline
+	50 & 4 & 1 \\
+	\hline
+\end{tabular}
+
+
+\section{Conclusi\'on}
+La vida máxima en este experimento es igual a dos iteraciones continuas para una celda. Además, podemos ver que hay cuatro celdas que se mantienen vivas desde la iteración 6 a la 50, es importante mencionar que las celdas no son las mismas, sin embargo, si están muy cercanas.\citet{p_2}
+
+
+\bibliography{Biblio}
+\bibliographystyle{plainnat}
+
+\end{document}
