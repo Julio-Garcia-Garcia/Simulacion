@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+	\deactivatetilden
+\spanishdecimal{.}
+\addto\captionsspanish{\def\tablename{Tabla}}
+\addto\captionsspanish{\def\listtablename{\'Indice de tablas}}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{graphicx}
+\graphicspath{{Figuras/}}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[clearempty,pagestyles]{titlesec}
+\usepackage{anysize}
+\usepackage{xcolor, colortbl}
+\usepackage{array, multirow, multicol}
+\usepackage{enumerate} 
+
+\def\baselinestretch{1.5}
+\papersize{27.9cm}{21.5cm} 
+\marginsize{2cm}{2cm}{1cm}{1cm}
+
+\title {Afinación y análisis de parámetros de algoritmos heurísticos para un problema de ruteo, mediante técnicas de simulación y métricas estadísticas}
+\author{Julio Garc\'ia}
+\pagestyle{empty}
+
+\pagestyle{empty}
+\begin{document}
+	\renewcommand{\listtablename}{Índice de tablas}
+	\renewcommand{\tablename}{Cuadro}
+	\maketitle
+
+	\section{Introducción}
+
+Encontrar la solución exacta de algunos problemas no es computacionalmente alcanzable, surge la necesidad de desarrollar métodos más eficientes con el fin de encontrar la mejor solución posible en un tiempo de proceso considerable.\\
+
+Algunos de los métodos más usados para este fin son los algoritmos heurísticos, el desempeño de este tipo de algoritmos normalmente está relacionado con la definición del valor adecuado de los parámetros que se utilizan en su estructura.\\
+
+En este trabajo se estudia la calibración de los valores de los parámetros antes mencionados  así como el desempeño del algoritmo acorde a la calibración haciendo uso de simulación y de un adecuado análisis estadístico.\\
+
+\section{Planteamiento del Problema}
+
+En la mayoría de los problemas de optimización surge la necesidad de desarrollar algoritmos de solución con el fin de aprovechar la estructura del problema a resolver y obtener soluciones de calidad aceptable en un tiempo computacional aceptable. \\
+
+A lo largo de la estructura de los algoritmos heurísticos, la mayoría de las veces, se implementan algunos parámetros para la selección de candidatos, evaluación de objetos y toma de decisiones en general. El desempeño que alcance un algoritmo en su implementación depende en gran medida de estos parámetros.\\
+
+Dada la importancia de los parámetros del algoritmo el problema secundario que se tiene que resolver para el uso eficiente del algoritmo consiste en calibrar adecuadamente los valores de los parámetros para que el heurístico en cuestión sea lo más robusto posible y en general siempre tenga un buen desempeño.\\
+
+Se plantea el uso de experimentación y análisis estadístico de los resultados obtenidos con el fin de obtener los valores adecuados para los parámetros participantes que se reflejen en un buen desempeño generalizado en el desempeño del algoritmo. Se busca con esto una combinación de valores de parámetros que en la gran mayoría de los casos ayuden al algoritmo a alcanzar soluciones de excelente calidad e incluso se podría definir para cada instancia particular la combinación de los valores de parámetros que optimizan el desempeño del algoritmo en la misma.\\
+	
+
+\section{Revisión de literatura}
+
+**** Checar algunos artículos científicos para ver en qué algoritmos heurísticos se ha hecho alguna calibración de parámetros.  (incluir referencias)
+
+\section{Metodología de Solución}
+
+Previo a la afinación de los parámetros, en este trabajo se presenta un algoritmo basado en GRASP para resolver un problema de ruteo. El problema de ruteo es planteado en el trabajo escrito por el Dr. Francisco [x], el cual consiste en encontrar una ruta en un grafo V donde cada nodo de la red representa un cliente y debe ser visitado una sola vez, el nodo donde inicia la ruta es un nodo ficticio. El objetivo del problema consiste en minimizar la latencia total.
+Enseguida se presenta el Pseudocódigo  del algoritmo basado en la metaheurística GRASP….
+…..
+…..
+…..
+La implementación original de este algoritmo se realizó en el lenguaje de programación C++, debido a que surgió de un trabajo que se requirió para el curso Ingeniería de Sistemasm aplicaciones. En este trabajo la implementación del algoritmo se tuvo que implementar en el lenguaje de programación Python.
+
+
+\section{Diseño de Experimentación y Análisis Estadístico}
+Los parámetros analizar en este trabajo son el valor $\alpha$ el cual está relacionado con la cantidad de elementos que participan en la lista restringida de candidatos  y la cantidad de iteraciones del algoritmo. Los valores de alpha son entre cero y uno, mientras que los valores de iteraciones se consideran desde 100 hasta 10000. Para este experimento se decidió realizar n-réplicas, las cuales se efectuarán con instrucciones de paralelismo ejecutadas desde Python, las métricas (objetivos) a observar son las siguientes:\\
+
+F1: Función objetivo, latencia de todos los clientes\\
+F2: Tiempo total de ejecución del algoritmo 
+
+Para este trabajo, se graficaron los resultados obtenidos de cada combinación de los dos parámetros y se obtendrá un frente de pareto para estos dos objetivos en particular.
+
+\section{Conclusiones y Trabajo a Futuro}
+
+Analizar que ventajas tiene la simulación en la calibración de los parámetros de un algoritmo.\\
+
+Analizar qué ventajas trae consigo una adecuada calibración.\\
+
+Evaluar el desempeño del algoritmo en cuanto a calidad de soluciones obtenidas.\\
+
+Evaluar el algoritmo con respecto a tiempo computacional.\\
+
+Identificar áreas de mejora, tanto para una crítica constructiva como para un posible trabajo a futuro.\\
+
+
+Enlistar todas las aplicaciones implementadas a lo largo del reporte/experimentación,\\
+---Implementación de un GRASP\\
+---Paralelización\\
+---Análisis estadístico\\
+---Frente de Pareto\\
+---Simulación\\
+
+
+\end{document}
